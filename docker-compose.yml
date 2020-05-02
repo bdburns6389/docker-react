@@ -1,8 +1,11 @@
 version: "3"
 services:
+  # 'Web' can be any name.
   web:
     build:
+      # 'Context' describes where all files should come from.  Could also be './client' if react app was nested.
       context: .
+      # Lets docker-compose know that we want to use a different file than just 'Dockerfile'
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
